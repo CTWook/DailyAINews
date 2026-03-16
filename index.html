@@ -3,24 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daily AI News Summary</title>
+    <title>Daily AI News - 매일 만나는 인공지능 트렌드</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Load modern font -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Load modern Korean font (Pretendard) -->
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
 </head>
 <body>
     <header class="site-header">
         <div class="container">
             <h1>Daily AI News</h1>
-            <p class="subtitle">Stay updated with the latest in Artificial Intelligence</p>
+            <p class="subtitle">매일 업데이트되는 인공지능 핵심 뉴스 요약</p>
         </div>
     </header>
 
-    <main class="container">
-        <div id="news-feed" class="news-grid">
-            <!-- News cards will be injected here by JavaScript -->
-        </div>
-    </main>
+    <div class="layout-container container">
+        <aside class="sidebar">
+            <h3>날짜별 보기</h3>
+            <ul id="date-list" class="date-list">
+                <!-- Dates will be injected here by JavaScript -->
+            </ul>
+        </aside>
+
+        <main class="content">
+            <h2 id="current-date-heading" class="section-title">최신 뉴스</h2>
+            <div id="news-feed" class="news-grid">
+                <!-- News cards will be injected here by JavaScript -->
+            </div>
+        </main>
+    </div>
 
     <footer class="site-footer">
         <div class="container">
