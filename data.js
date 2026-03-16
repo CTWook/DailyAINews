@@ -1,237 +1,281 @@
+// 자동으로 크롤링되어 생성된 데이터입니다.
 export const mockNewsData = [
     {
-        id: 1,
-        title: "구글, 제미나이(Gemini) 2.5 비전 모델 공개... 이미지 이해도 획기적 향상",
-        summary: "구글이 새로운 멀티모달 AI '제미나이 2.5'를 발표했습니다. 특히 의료 영상 및 복잡한 설계도면 분석에서 인간 전문가 수준의 정확도를 보여주며 업계의 주목을 받고 있습니다.",
-        date: "2026-03-16",
-        source: "AI 타임스",
-        link: "https://news.google.com/search?q=%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5"
+        "id": 1,
+        "title": "발달장애 학생을 위한 맞춤형 인공지능(AI) 디지털 교육자료 보급! - 전체 | 카드/한컷 | 멀티미디어",
+        "summary": "발달장애 학생을 위한 맞춤형 인공지능(AI) 디지털 교육자료 보급! - 전체 | 카드/한컷 | 멀티미디어  대한민국 정책브리핑",
+        "date": "2026-03-12",
+        "source": "대한민국 정책브리핑",
+        "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5XOEFMUU5FdmY3YmhOTEpDUWxPWGxmYjVXQ0txOWY0cl9fYmhreDNJb1F2S3FCdFVLZUdjdE5jYllsXzZLT2tXcl9UbWJOVk1mODU1bTYwOFBkTEdTYTU2V09ZVTJtWHpkLU5JLW5n?oc=5"
     },
     {
-        id: 2,
-        title: "오픈AI, 코딩 특화 '소라(Sora) 코드' 베타 테스트 시작",
-        summary: "자연어 명령만으로 복잡한 웹 애플리케이션의 프론트엔드와 백엔드를 동시에 생성하는 새로운 AI 도구가 일부 개발자들을 대상으로 비공개 테스트에 들어갔습니다.",
-        date: "2026-03-16",
-        source: "테크크런치 코리아",
-        link: "https://news.google.com/search?q=%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5"
+        "id": 2,
+        "title": "재난 구조 대신 살상의 도구가 된 인공지능",
+        "summary": "재난 구조 대신 살상의 도구가 된 인공지능  단비뉴스",
+        "date": "2026-03-14",
+        "source": "단비뉴스",
+        "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5SZEdxUTdTREp3ZTVCUlYwaEJSMHRZeVhtcXRxeW56aDI5SFJZWlNLcFIxSUZzeEd4VzBNbmtrMFhUSXZtZVhRUDYzX29rdnFsQlM0QndGMUlMTnJiQmxtSWU5SWd0MzNWc1dr?oc=5"
     },
     {
-        id: 3,
-        title: "한국어 맞춤형 초거대 AI 모델, 공공기관 도입 본격화",
-        summary: "행정 문서를 자동으로 요약하고 민원인의 질의에 실시간으로 답변하는 한국어 특화 LLM이 주요 정부 부처에 공식 도입되었습니다. 업무 효율성이 30% 이상 증가할 것으로 기대됩니다.",
-        date: "2026-03-15",
-        source: "IT조선",
-        link: "https://news.google.com/search?q=%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5"
+        "id": 3,
+        "title": "경북도, 지능공간정보플랫폼 본격 운영...'인공지능(AI)이 행정 돕는다'",
+        "summary": "경북도, 지능공간정보플랫폼 본격 운영...'인공지능(AI)이 행정 돕는다'  이로운넷",
+        "date": "2026-03-10",
+        "source": "이로운넷",
+        "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9sTTUtWVFnQkRmWjQxSlAxS2hnSVpybjJFQWtSak1YZjdDbzVNbHM2c0NBY3hhZVNFdzYzbVgzcW1vcEpMblNnU1NDMFFFb0dtTkVJOFBnSndweXZ0bF9TQkw2eHB2Zw?oc=5"
     },
     {
-        id: 4,
-        title: "테슬라, 휴머노이드 로봇 '옵티머스' 공장 투입 확대",
-        summary: "테슬라가 자사 자동차 제조 공정에 옵티머스 로봇 수백 대를 추가 배치했다고 밝혔습니다. 단순 반복 작업을 넘어 정밀 조립 단계까지 AI 로봇의 역할이 커지고 있습니다.",
-        date: "2026-03-15",
-        source: "블룸버그",
-        link: "https://news.google.com/search?q=%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5"
+        "id": 4,
+        "title": "“챗GPT 아니었다”…인공지능 이용시간 1위는 ‘이것’",
+        "summary": "“챗GPT 아니었다”…인공지능 이용시간 1위는 ‘이것’  농민신문",
+        "date": "2026-03-10",
+        "source": "농민신문",
+        "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE15dTFfeUJpY2ZCTWo0YmhaM0NnYnhpbmR5bkhYeFBMLTYyTTJqZzNGR2h3OVBFUkhOMm1GQVdlbUZib1QxWmtTMXBWd1A2SEh3cDFLU3VQTkVkZw?oc=5"
     },
     {
-        id: 5,
-        title: "EU 인공지능법(AI Act) 발효 후 첫 제재 사례 발생",
-        summary: "유럽연합의 강력한 AI 규제법이 본격 시행된 가운데, 사용자 동의 없이 감정 인식 AI를 상업적으로 활용한 글로벌 리테일 기업에 거액의 과징금이 부과되었습니다.",
-        date: "2026-03-14",
-        source: "연합뉴스",
-        link: "https://news.google.com/search?q=%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5"
+        "id": 5,
+        "title": "GIST, 사람의 감각까지 학습하는 인공지능 기술 개발",
+        "summary": "GIST, 사람의 감각까지 학습하는 인공지능 기술 개발  조선일보",
+        "date": "2026-03-10",
+        "source": "조선일보",
+        "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQN2xRQXRlZTNna3E5LWd3cDFNQmc5RFcxbWtNR2lXTnB1YXVJZlozaS13Z3VSLW9aRnlhemt6eEZyZVF3U3BtZU9mUXQ1UFg5RWZjdWpDeUhwU3MtcXNWNTB1NlhPR2FrYVI1a0hZbmJFTnc2dDVXX2xQNm9lWkxDLUF4ak9NNnZFSXJXZmtub2vSAaQBQVVfeXFMUDNuY2Z1dTVoYl9rQ1NkWkx5OTlndWx3NGt6MVFkUG11QmJhdHFWNDdUbXlWMGtwTEllQkExd1FWejhURGFRRU5qdng3SkpGX0tIWmY0cTQyTGFBSUZTdTZNRUNCZTEtd29ySHBwR00zdHFWWndncmZYQ0pqdkcyVndfcVRyQlV1UVRkNFRybDlqS2Z4QzMtUUtLLXY5UTlsUkM3TXc?oc=5"
     },
     {
-        id: 6,
-        title: "애플, 온디바이스 AI '애플 인텔리전스 2.0' iOS 20에 탑재 예고",
-        summary: "인터넷 연결 없이도 스마트폰 자체에서 복잡한 추론과 고품질 이미지 생성이 가능한 차세대 애플 인텔리전스가 올 가을 출시될 iOS 20의 핵심 기능으로 공개되었습니다.",
-        date: "2026-03-14",
-        source: "맥루머스",
-        link: "https://news.google.com/search?q=%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5"
+        "id": 6,
+        "title": "심사평가원 경기남부본부 '보건의료 인공지능 인재' 양성 협약",
+        "summary": "심사평가원 경기남부본부 '보건의료 인공지능 인재' 양성 협약  약사공론",
+        "date": "2026-03-13",
+        "source": "약사공론",
+        "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5wUkRzbWxVTy1jZTRxTUlpTGVjbGhqd1Q2VE1XNUl5Y0Vzcm92bWFIaUxjLV83UTZxVXEyRHUwSE5aa2hGZVdLSWQ3bWtvc3JCT3FsUTlmTHNXU0ROVHRQV2dMY0pNc1hDVDdaeA?oc=5"
     },
     {
-        id: 7,
-        title: "엔비디아, 차세대 AI 가속기 '루빈(Rubin)' 조기 양산 돌입",
-        summary: "전 세계적인 AI 반도체 수요 폭증에 대응하기 위해 엔비디아가 블랙웰의 후속작인 루빈 아키텍처 기반 칩의 양산 일정을 3개월 앞당겼습니다.",
-        date: "2026-03-13",
-        source: "전자신문",
-        link: "https://news.google.com/search?q=%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5"
+        "id": 7,
+        "title": "[삼라만상] 인공지능 시대, 사람이 먼저여야 하는 이유",
+        "summary": "[삼라만상] 인공지능 시대, 사람이 먼저여야 하는 이유  v.daum.net",
+        "date": "2026-03-11",
+        "source": "v.daum.net",
+        "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5ZUHBnNzkxSzBRNDJfWHU5TXZKZm1nQkd4djNudnptekVPS3lyNTh1bjZMVmYzTmpCcTEyVFc5U0J2Z05scDNhRDE5VU1ncG8?oc=5"
     },
     {
-        id: 8,
-        title: "메타, 오디오 기반 AI '보이스박스 3' 오픈소스로 전격 공개",
-        summary: "단 2초의 음성 샘플만으로 화자의 목소리와 억양을 완벽하게 재현하고, 50개 이상의 언어로 실시간 통역이 가능한 AI 모델이 연구 목적으로 무료 공개되었습니다.",
-        date: "2026-03-13",
-        source: "지디넷코리아",
-        link: "https://news.google.com/search?q=%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5"
+        "id": 8,
+        "title": "“인공지능을 한글처럼”…인공지능 일상화 추진",
+        "summary": "“인공지능을 한글처럼”…인공지능 일상화 추진  KBS 뉴스",
+        "date": "2026-03-11",
+        "source": "KBS 뉴스",
+        "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFA0Qm1jVm8tV1NUXzFyam9GblRZckRPajNKTU5TUy1RZDVlQVpxNEhtS3duVzZhbmk2NEZWZXo1Q0g5SC13Zl9wXzN4ZXdrLXRKZ0h0QlRYbk9pd2M?oc=5"
     },
     {
-        id: 9,
-        title: "의료 AI 스타트업, 개인 맞춤형 항암제 설계 AI로 FDA 혁신 의료기기 지정",
-        summary: "환자의 유전체 데이터를 분석하여 부작용을 최소화하는 최적의 항암제 분자 구조를 제안하는 AI 기술이 미국 FDA의 신속 심사 대상으로 선정되었습니다.",
-        date: "2026-03-12",
-        source: "바이오스펙테이터",
-        link: "https://news.google.com/search?q=%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5"
+        "id": 9,
+        "title": "AI 보안 기술 확보 나선 '오픈AI', 인공지능 보안 스타트업 프롬프트푸 인수",
+        "summary": "AI 보안 기술 확보 나선 '오픈AI', 인공지능 보안 스타트업 프롬프트푸 인수  인공지능신문",
+        "date": "2026-03-10",
+        "source": "인공지능신문",
+        "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBqeGJVQW4xUHhKR2xZMnJBRXZITENGR3dNcXBsVThITGI0LW5MMENVZG1mMV9xWTVaU3lIaDNad0pGQl9Va1VSWlpFd01la0N6akVlYWRIQXZtWVV6eTZuZVhDd2dKUTQ?oc=5"
     },
     {
-        id: 10,
-        title: "아마존, 드론 배송 시스템에 자율 주행 AI '알렉사 내비' 적용",
-        summary: "복잡한 도심 환경에서도 장애물을 스스로 인식하고 우회하는 고도화된 AI 비전 시스템이 아마존의 프라임 에어 드론에 탑재되어 배송 성공률을 크게 높였습니다.",
-        date: "2026-03-12",
-        source: "월스트리트저널",
-        link: "https://news.google.com/search?q=%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5"
+        "id": 10,
+        "title": "한국데이터인공지능법정책학회, 세미나 개최",
+        "summary": "한국데이터인공지능법정책학회, 세미나 개최  법률신문",
+        "date": "2026-03-11",
+        "source": "법률신문",
+        "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5jcjZKeEJ6Zk5XVWQ3aGN5eEZ2ZmVrYzRVZy1Ba2xYQjYyY3lmMGtYZFlkWU5YaXBJOV80UHp0RXNfekFaZlVlSUZVamJsbl9xUjVQRGVHNzZpUGhkNlVLUEtCa0NCREJYRXcxYVNn0gFyQVVfeXFMUGJpZW5UUUZxc1hjZlpSMy1YR2w4SHFQTGNraXlFRlBsWllibGhmOU9aVzRqU1VlZXNvMkk1b0tySERYZG1RS3Nham5sZzVsRXJnQXhIQmlTclJTNFlRUUNaeDhyLUtXZDhpSkJpS0VreVNB?oc=5"
     },
     {
-        id: 11,
-        title: "마이크로소프트, '코파일럿' 윈도우 기본 탑재 의무화 논란",
-        summary: "윈도우 12 업데이트부터 AI 비서 코파일럿이 운영체제의 핵심 영역에 깊숙이 통합되면서, 일부 사용자들 사이에서 개인정보 보호 및 선택권 침해에 대한 우려가 제기되고 있습니다.",
-        date: "2026-03-11",
-        source: "PC가이드",
-        link: "https://news.google.com/search?q=%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5"
+        "id": 11,
+        "title": "인공지능 시대에 철학의 자리를 묻다…인공지능은 철학의 종말을 꿈꾸는가?",
+        "summary": "인공지능 시대에 철학의 자리를 묻다…인공지능은 철학의 종말을 꿈꾸는가?  대학지성 In&Out",
+        "date": "2026-03-11",
+        "source": "대학지성 In&Out",
+        "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBUbnFKSE01RktqaXNkdDJiNkNfV0lDZ2ZQZG5SZTVId1VteXA1b3dnSzgxVENSTkFidjdYTlBscVZMb1RMZDUwZlZSWHBKVEU2NjZKRWVpcmNkYlh6dTI1cUE4a195X01LeG14Zg?oc=5"
     },
     {
-        id: 12,
-        title: "국내 연구진, 전력 소모 1/100로 줄인 '뉴로모픽 칩' 개발 성공",
-        summary: "인간의 뇌 신경망 구조를 모방하여 초저전력으로 AI 연산을 수행할 수 있는 차세대 반도체 원천 기술이 국내 대학 연구팀에 의해 세계 최초로 개발되었습니다.",
-        date: "2026-03-11",
-        source: "디지털데일리",
-        link: "https://news.google.com/search?q=%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5"
+        "id": 12,
+        "title": "시흥시, 경기도와 '경기 인공지능(AI) 혁신클러스터' 본격 가동",
+        "summary": "시흥시, 경기도와 '경기 인공지능(AI) 혁신클러스터' 본격 가동  v.daum.net",
+        "date": "2026-03-11",
+        "source": "v.daum.net",
+        "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1LTVNCcGYzZmFrNXB0SmFBMHppMFd1Z1VqaFJFVmZodjFKNXNzS1hrbGNtc2JCMVd2aTJnQnpCbzNDbXRDXzcyUEhCV2RJUlE?oc=5"
     },
     {
-        id: 13,
-        title: "AI가 작곡한 교향곡, 빌보드 클래식 차트 1위 진입",
-        summary: "특정 작곡가의 데이터 없이 완전히 새로운 스타일을 학습한 생성형 AI의 클래식 앨범이 평단과 대중의 호평을 받으며 이례적인 흥행 기록을 세우고 있습니다.",
-        date: "2026-03-10",
-        source: "음악저널",
-        link: "https://news.google.com/search?q=%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5"
+        "id": 13,
+        "title": "'인공지능 윤리원칙' 제정에 속도 낸다... \"인간중심 AI개발·활용 촉진\"",
+        "summary": "'인공지능 윤리원칙' 제정에 속도 낸다... \"인간중심 AI개발·활용 촉진\"  v.daum.net",
+        "date": "2026-03-13",
+        "source": "v.daum.net",
+        "link": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE8wb2ZySllrbExzVVBrRVlPYmZ0MDFibkxvVjFDUG9jb05RLWN5LWY4MGIwV0ZiNlhLUWxqZ1pYNmZBWFo3OHc?oc=5"
     },
     {
-        id: 14,
-        title: "자율주행 레벨 4 상용화, 서울 강남 등 일부 지역서 서비스 시작",
-        summary: "운전자의 개입이 필요 없는 완전 자율주행 택시 서비스가 오늘부터 서울 주요 도심 구간에서 정식으로 운행을 시작했습니다. AI의 실시간 교통 흐름 예측 기술이 핵심입니다.",
-        date: "2026-03-10",
-        source: "매일경제",
-        link: "https://news.google.com/search?q=%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5"
+        "id": 14,
+        "title": "질병청, AI 대응 위해 '질병관리 인공지능 담당관' 신설",
+        "summary": "질병청, AI 대응 위해 '질병관리 인공지능 담당관' 신설  v.daum.net",
+        "date": "2026-03-09",
+        "source": "v.daum.net",
+        "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE8wa0lWT3M3dmJ5RnUxNEFreHRyUkNzQ1ZldmlHME9WYUc5OFVLZjNoZ2NoYjFKTVhSbDN0VGVzQVFMcVBTVnVUend0UQ?oc=5"
     },
     {
-        id: 15,
-        title: "오픈소스 LLM '라마(Llama) 4', 매개변수 1조 개 돌파",
-        summary: "메타가 개발한 라마 시리즈의 최신 버전이 마침내 파라미터 1조 개 벽을 넘어섰습니다. 오픈소스 생태계가 빅테크의 독점적 초거대 AI와 대등하게 경쟁할 수 있는 발판이 마련되었습니다.",
-        date: "2026-03-09",
-        source: "테크크런치",
-        link: "https://news.google.com/search?q=%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5"
+        "id": 15,
+        "title": "보건복지 정책 문서, 인공지능 학습 데이터 전환",
+        "summary": "보건복지 정책 문서, 인공지능 학습 데이터 전환  v.daum.net",
+        "date": "2026-03-11",
+        "source": "v.daum.net",
+        "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE03cTBKbVprTWRKZlhGbUtzOGx6ajBiQWhDYUs2aGpuUVVlcDZIdVIzZ3h3RWNiTFRBTFl3QW4zcW5CWDdzb0NCcGNMTzNlWU0?oc=5"
     },
     {
-        id: 16,
-        title: "AI 기반 스마트 농업, 기후 변화에 따른 식량 위기 대안으로 부상",
-        summary: "위성 이미지와 토양 센서 데이터를 AI가 분석하여 최적의 파종 시기와 관수량을 제안하는 솔루션이 가뭄 지역 농가의 수확량을 평균 20% 이상 향상시킨 것으로 나타났습니다.",
-        date: "2026-03-09",
-        source: "농업신문",
-        link: "https://news.google.com/search?q=%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5"
+        "id": 16,
+        "title": "대한민국의 인공지능 영토를 넓힌다....첨단 GPU 확보 위한 민간 클라우드 기업 공모",
+        "summary": "대한민국의 인공지능 영토를 넓힌다....첨단 GPU 확보 위한 민간 클라우드 기업 공모  인공지능신문",
+        "date": "2026-03-12",
+        "source": "인공지능신문",
+        "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBJUTZTU2h0eGxNUWdyRjc3Y0otd1c4X2dqTEFVbWJxdjk1aW42aGlfZEJ5Rm9NamtOczBjU1BaWGZSV1U5MmZfNDhQNWgtRnNid2RMVEY1ZklCMUxiVjZ2Mml6d0tMYlE?oc=5"
     },
     {
-        id: 17,
-        title: "딥페이크 탐지 시스템 '디펜더 AI', 글로벌 소셜 미디어 플랫폼 연동",
-        summary: "날로 정교해지는 딥페이크 영상과 조작된 이미지를 실시간으로 걸러내는 보안 AI가 주요 소셜 네트워크 서비스의 기본 필터링 시스템으로 채택되었습니다.",
-        date: "2026-03-08",
-        source: "보안뉴스",
-        link: "https://news.google.com/search?q=%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5"
+        "id": 17,
+        "title": "서울대 인공지능신뢰성연구센터 2026 월례세미나 시리즈-신뢰할 수 있는 인공지능 만들기(3/24(화))",
+        "summary": "서울대 인공지능신뢰성연구센터 2026 월례세미나 시리즈-신뢰할 수 있는 인공지능 만들기(3/24(화))  서울대학교",
+        "date": "2026-03-12",
+        "source": "서울대학교",
+        "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5xMlUtT0Y5b1BIT19yWXhvM3JiMXo4N1ZUTjlRYVg4MlV0UFVJU2VOU2JOZUV0T0o0WTFmZ21GbjMwOUJ5aW5sLTZXYTV0TTFDWEdaVFNPZWZrQ2JNcVZGbXI1NzQ?oc=5"
     },
     {
-        id: 18,
-        title: "AI 튜터, 전국 초중고 맞춤형 교육 시스템으로 전면 도입 확정",
-        summary: "학생 개개인의 학습 속도와 이해도를 분석하여 1:1 맞춤형 커리큘럼을 제공하는 AI 보조 교사 시스템이 내년부터 공교육 현장에 공식 도입됩니다.",
-        date: "2026-03-08",
-        source: "에듀동아",
-        link: "https://news.google.com/search?q=%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5"
+        "id": 18,
+        "title": "안양대, 인공지능 글로벌교육원 및 국제미래학회와 AI 미래 인재 양성 협약",
+        "summary": "안양대, 인공지능 글로벌교육원 및 국제미래학회와 AI 미래 인재 양성 협약  v.daum.net",
+        "date": "2026-03-10",
+        "source": "v.daum.net",
+        "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFA2ck50SVdual96dWRiejQ1NkdWeHZHTnJjdFhiRU92Z0U1Y09iM1UxZHRWT3NOUlA2alIxOEh1V2liVl9WODZwckx5WTYyZlU?oc=5"
     },
     {
-        id: 19,
-        title: "양자 컴퓨팅과 AI의 융합, 신소재 개발 기간 획기적 단축",
-        summary: "양자 컴퓨터의 연산 능력을 활용하여 AI 모델을 훈련시키는 하이브리드 기술이 상용화 단계에 접어들며, 배터리 효율을 높이는 새로운 고체 전해질 소재가 발견되었습니다.",
-        date: "2026-03-07",
-        source: "사이언스타임즈",
-        link: "https://news.google.com/search?q=%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5"
+        "id": 19,
+        "title": "2026년 인공지능융합기술대상 시상식 개최",
+        "summary": "2026년 인공지능융합기술대상 시상식 개최  v.daum.net",
+        "date": "2026-03-12",
+        "source": "v.daum.net",
+        "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE82SWRnb2owcWhsTVB5N1NuZzFBNTRHMkxhU2Rtb05SektsOUx3Sk1yUl9lbWREb0lPRWszQ2hfTlFSUndvSngwY2k4MnpTb1U?oc=5"
     },
     {
-        id: 20,
-        title: "글로벌 은행권, AI 기반 실시간 금융 사기 적발 시스템 가동",
-        summary: "수천만 건의 거래 데이터를 0.1초 만에 분석하여 비정상적인 자금 흐름을 차단하는 AI 시스템이 글로벌 대형 은행 연합체에 의해 공동 구축되었습니다.",
-        date: "2026-03-06",
-        source: "파이낸셜뉴스",
-        link: "https://news.google.com/search?q=%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5"
+        "id": 20,
+        "title": "[시대만필] 사법의 미래, 인공지능보다 먼저 지켜야 할 것",
+        "summary": "[시대만필] 사법의 미래, 인공지능보다 먼저 지켜야 할 것  v.daum.net",
+        "date": "2026-03-10",
+        "source": "v.daum.net",
+        "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBjMU1IWTVqcDl1UXl2QjJZZ0NEaVFZYklTa2Vjc2FJNW5vTFJGUm9zVGVGUUdNRlJnOHM5bU5uUmRZTGk2OGhtQmxLR2dHNFE?oc=5"
     },
     {
-        id: 21,
-        title: "우주 탐사선에 탑재된 자율 AI, 심우주에서 새로운 소행성 군집 발견",
-        summary: "지구와의 통신 지연을 극복하기 위해 탐사선 자체에 탑재된 AI가 독자적으로 궤도를 수정하고 데이터를 분석하여 미지의 소행성들을 찾아내는 쾌거를 이루었습니다.",
-        date: "2026-03-05",
-        source: "항공우주신문",
-        link: "https://news.google.com/search?q=%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5"
+        "id": 21,
+        "title": "보건복지 정책 문서, 인공지능 학습 데이터 전환",
+        "summary": "보건복지 정책 문서, 인공지능 학습 데이터 전환  v.daum.net",
+        "date": "2026-03-11",
+        "source": "v.daum.net",
+        "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5sQkpvVHVXUWlzUEFZODg0SzZDMURoYjlHQ0VrRHJVN1ZQQlgtVTRnaVVscjdmM1gzUmFjWGVBVU5vVGVfUmlHc1hTMHd0dUFrNThBNQ?oc=5"
     },
     {
-        id: 22,
-        title: "구인구직 시장의 변화, 'AI 면접관' 선호도 인간 면접관 추월",
-        summary: "편견 없이 직무 역량만을 평가하는 AI 면접 시스템이 취업 준비생들 사이에서 더 공정하다는 평가를 받으며 주요 기업들의 채용 트렌드를 바꾸고 있습니다.",
-        date: "2026-03-04",
-        source: "한경잡앤조이",
-        link: "https://news.google.com/search?q=%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5"
+        "id": 22,
+        "title": "대전시, 인공지능(AI) 기반 항공사진 판독으로 도시 관리 고도화",
+        "summary": "대전시, 인공지능(AI) 기반 항공사진 판독으로 도시 관리 고도화  v.daum.net",
+        "date": "2026-03-15",
+        "source": "v.daum.net",
+        "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBKOVpOMWdNZFdrVFZLZDcwTHlkTW5HeWk2YjYtbkp2TTFPQ0hLS0NBQzUzaDlaQU8xdHl6eDFsNGV4T3FiVmE2UFJaeDdLdVk?oc=5"
     },
     {
-        id: 23,
-        title: "웨어러블 기기와 AI의 결합, 심혈관 질환 사전 예측 정확도 95%",
-        summary: "스마트워치에서 수집되는 미세한 생체 신호 변화를 AI가 24시간 모니터링하여 심근경색 등의 위험을 며칠 전에 경고해주는 기능이 의료 승인을 받았습니다.",
-        date: "2026-03-03",
-        source: "헬스케어투데이",
-        link: "https://news.google.com/search?q=%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5"
+        "id": 23,
+        "title": "李대통령 \"있는 힘 다 모아 산업인공지능전환 신속 추진\"",
+        "summary": "李대통령 \"있는 힘 다 모아 산업인공지능전환 신속 추진\"  연합인포맥스",
+        "date": "2026-03-12",
+        "source": "연합인포맥스",
+        "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5fYTVDOEFXd0w3eWFTYkRwRzdMWXlCWHpYMWxYQ0U4ZFlJaDVJSGlkNXRzcFZuOUs3dkRmZzltYVRaTzFIMWk5N3hvWmRiellhVUt6TW0xWjA4ZlgyUVN6bjJLVlI5OXI5eEh5Skt2b1o?oc=5"
     },
     {
-        id: 24,
-        title: "지속가능한 에너지를 위한 AI 전력망 '스마트 그리드 2.0'",
-        summary: "태양광, 풍력 등 예측이 어려운 재생에너지의 생산량과 도시의 실시간 전력 수요를 AI가 완벽하게 매칭하여 버려지는 에너지를 제로화하는 프로젝트가 첫 선을 보였습니다.",
-        date: "2026-03-02",
-        source: "그린에너지뉴스",
-        link: "https://news.google.com/search?q=%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5"
+        "id": 24,
+        "title": "광주인공지능사업단, AI 기업 스케일업 전략 공유",
+        "summary": "광주인공지능사업단, AI 기업 스케일업 전략 공유  v.daum.net",
+        "date": "2026-03-11",
+        "source": "v.daum.net",
+        "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5hX1hkTlgyQ3RNSDJkeERiVDVaN09OZnVueEEtWm1saXNoTGg3MTZXZXNFa2NWSkVfOW9LZU1XMnQ2THVJRklmTURvVDljN3c?oc=5"
     },
     {
-        id: 25,
-        title: "AI가 생성한 3D 가상 세계, 메타버스 플랫폼의 새로운 부흥 이끌어",
-        summary: "사용자가 텍스트로 묘사하기만 하면 실시간으로 사실적인 3D 도시와 자연 환경을 구축해주는 생성형 AI 덕분에 침체되었던 가상현실 플랫폼이 다시 활기를 띠고 있습니다.",
-        date: "2026-03-01",
-        source: "디스이즈게임",
-        link: "https://news.google.com/search?q=%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5"
+        "id": 25,
+        "title": "SKT “모든 직원에 1인 1인공지능 비서”",
+        "summary": "SKT “모든 직원에 1인 1인공지능 비서”  문화일보",
+        "date": "2026-03-16",
+        "source": "문화일보",
+        "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9HTU1henRMc2xLalM4NjIwaEpDdkJEOFRXVml0ek5BREdoZzZUaGpVV1FXeGExc2VwWXRhQjA1SEllOVlwNEJBTThnWkRINDVW?oc=5"
     },
     {
-        id: 26,
-        title: "글로벌 AI 학술대회, '설명 가능한 AI (XAI)'가 최대 화두",
-        summary: "AI가 도출한 결론의 근거를 인간이 이해할 수 있는 언어로 설명하는 기술이 금융, 의료 등 신뢰성이 중요한 분야의 핵심 과제로 떠오르며 관련 연구 발표가 쏟아졌습니다.",
-        date: "2026-03-01",
-        source: "테크니컬리포트",
-        link: "https://news.google.com/search?q=%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5"
+        "id": 26,
+        "title": "한수원, 인공지능(AI) 기반 ‘지능형 상태감시 시스템’ 적용 성공",
+        "summary": "한수원, 인공지능(AI) 기반 ‘지능형 상태감시 시스템’ 적용 성공  에너지데일리",
+        "date": "2026-03-10",
+        "source": "에너지데일리",
+        "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE56ZmhKUlQ4dGRfUHVrVnZHU1dkMF9FQ2N6QnJSZ2s3Zjg4RmtHamJVb3BnTUtrWk9nLUotZDhTMUlFb2hUcF9XMHQ2cnhpZHZ3clZURTBLX0R3R3k3Vl83VzBzRUN1UDdXWTE2eUFBWmM?oc=5"
+    },
+    {
+        "id": 27,
+        "title": "학습 평가, 수강과목 추천도 'AI'로…대학가 인공지능 플랫폼 도입",
+        "summary": "학습 평가, 수강과목 추천도 'AI'로…대학가 인공지능 플랫폼 도입  v.daum.net",
+        "date": "2026-03-10",
+        "source": "v.daum.net",
+        "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTFBIXzZDUEM4LThoTzQtdjBsdlhXVEVPN2JJYXBpSkRoLWtmZkdieXVBWlZ0dkZScEowUWlvVHhjMUtsTGdHdG5NNlVsYw?oc=5"
+    },
+    {
+        "id": 28,
+        "title": "[함영기의 AI직설] 생태계를 위한 인공지능은 없다",
+        "summary": "[함영기의 AI직설] 생태계를 위한 인공지능은 없다  교육언론[창]",
+        "date": "2026-03-13",
+        "source": "교육언론[창]",
+        "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBGeE9FWjFsTHEwY2dJbmpvNEZwWVBfR0xVQmVXZEgzM21HNlR0bElKRXB6TjByMzZGSnRBeWNUUDlXS0JPcVVLZlBmUXpsS2NWbDBwZUhCV0d0SmNGOFFZVFl6cmxubVlLbk50Sm5VZ9IBb0FVX3lxTFBGeE9FWjFsTHEwY2dJbmpvNEZwWVBfR0xVQmVXZEgzM21HNlR0bElKRXB6TjByMzZGSnRBeWNUUDlXS0JPcVVLZlBmUXpsS2NWbDBwZUhCV0d0SmNGOFFZVFl6cmxubVlLbk50Sm5VZw?oc=5"
+    },
+    {
+        "id": 29,
+        "title": "[ET단상] 국방인공지능법 입법 골든타임, NIST AI RMF가 해법이다",
+        "summary": "[ET단상] 국방인공지능법 입법 골든타임, NIST AI RMF가 해법이다  전자신문",
+        "date": "2026-03-10",
+        "source": "전자신문",
+        "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE9QVHpoalZob2hJZGtRSzBWVzR5XzVCMld4MnkxNjl2YWRQd1hqUS1TMHpOTDJHMzI1TXpXR2pCZWZQZmlzWlo5c25FMWI0QQ?oc=5"
+    },
+    {
+        "id": 30,
+        "title": "[한국방송뉴스(주)] 공무원과 인공지능(AI)이 힘을 합쳐노동자의 생명을 지킨다",
+        "summary": "[한국방송뉴스(주)] 공무원과 인공지능(AI)이 힘을 합쳐노동자의 생명을 지킨다  한국방송뉴스",
+        "date": "2026-03-13",
+        "source": "한국방송뉴스",
+        "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFB5ZUw1eFU5cmlHRHN6UXUyT0dyTVdrVUlrOGRlbUcyUDd5UWN6bDVUeXBNSlVBeG4ySFIwLUJwdjVQcTYxMWlSRVNJREYwX2o4Yk9GMzNHRS1KNWtBakE?oc=5"
     }
 ];
 
 export const mockWeeklyData = [
     {
-        id: "w3",
-        weekLabel: "3월 3주차 (3.16 ~ 3.22)",
-        title: "3월 3주차 주간 동향: 제미나이 2.5 비전 모델과 소라 코드 공개",
-        summary: "구글의 제미나이 2.5 비전 모델과 오픈AI의 코딩 특화 '소라 코드'가 연달아 공개되며 멀티모달 AI와 자동화 도구의 비약적인 발전을 보여준 한 주입니다. 개발과 분석 환경의 혁신이 예상됩니다.",
-        date: "2026-03-16",
-        link: "https://news.google.com/search?q=%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5"
+        "id": "w3",
+        "weekLabel": "3월 3주차 (3.16 ~ 3.22)",
+        "title": "3월 3주차 주간 동향: 제미나이 2.5 비전 모델과 멀티모달 발전",
+        "summary": "구글의 제미나이 2.5 비전 모델과 각종 코딩 특화 모델이 연달아 공개되며 멀티모달 AI와 자동화 도구의 비약적인 발전을 보여준 한 주입니다. 빅테크들의 투자와 오픈소스 진영의 반격이 가속화되고 있습니다.",
+        "date": "2026-03-16",
+        "link": "https://news.google.com/search?q=%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5"
     },
     {
-        id: "w2",
-        weekLabel: "3월 2주차 (3.9 ~ 3.15)",
-        title: "3월 2주차 주간 동향: 메타 라마 4 1조 매개변수 돌파 및 규제 본격화",
-        summary: "메타의 오픈소스 LLM '라마 4'가 1조 매개변수를 돌파했습니다. 한편, EU 인공지능법 발효 후 첫 제재 사례가 발생하고 테슬라 휴머노이드 투입이 확대되는 등 기술 진보와 규제가 맞물린 핵심 주간이었습니다.",
-        date: "2026-03-15",
-        link: "https://news.google.com/search?q=%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5"
+        "id": "w2",
+        "weekLabel": "3월 2주차 (3.9 ~ 3.15)",
+        "title": "3월 2주차 주간 동향: 매개변수 1조 개 돌파 및 AI 규제 본격화",
+        "summary": "오픈소스 LLM이 1조 매개변수를 돌파하며 독점 모델들을 위협하고 있습니다. 한편, EU 인공지능법 등 각국의 규제가 본격화되며 기술 진보와 제도적 안전장치가 맞물린 핵심 주간이었습니다.",
+        "date": "2026-03-09",
+        "link": "https://news.google.com/search?q=%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5"
+    }
+];
+
+export const mockMonthlyData = [
+    {
+        "id": "m3",
+        "monthLabel": "2026년 3월 요약",
+        "title": "3월 월간 요약: 멀티모달 AI의 완성 및 각 산업 분야 도입률 70% 돌파",
+        "summary": "3월 한 달은 텍스트, 이미지, 음성을 아우르는 멀티모달 AI가 완벽한 상용화 수준에 도달했음을 보여주었습니다. 또한 주요 기업들의 AI 솔루션 실제 도입률이 크게 증가하여 AI가 완벽한 산업 인프라로 자리잡았습니다.",
+        "date": "2026-03-01",
+        "link": "https://news.google.com/search?q=%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5"
     },
     {
-        id: "w1",
-        weekLabel: "3월 1주차 (3.2 ~ 3.8)",
-        title: "3월 1주차 주간 동향: AI와 이종 산업 간의 융합 및 실생활 적용 확산",
-        summary: "양자 컴퓨팅을 활용한 신소재 개발, 우주 탐사선 자율 AI, 심혈관 예측 웨어러블 및 딥페이크 탐지 시스템 연동 등 AI 기술이 사회 각 분야의 실질적 문제를 해결하는 데 적용되기 시작했습니다.",
-        date: "2026-03-08",
-        link: "https://news.google.com/search?q=%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5"
+        "id": "m2",
+        "monthLabel": "2026년 2월 요약",
+        "title": "2월 월간 요약: 추론 모델의 효율성 증가와 소형 언어 모델(sLLM) 약진",
+        "summary": "대형 모델의 높은 운영 비용을 해결하기 위해 최적화된 추론 모델과 온디바이스 AI용 소형 언어 모델들이 대거 발표되었습니다. 스마트폰 및 가전제품과 직접 연동되는 물리적 AI 시대의 서막이 열렸습니다.",
+        "date": "2026-02-01",
+        "link": "https://news.google.com/search?q=%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5"
     }
 ];

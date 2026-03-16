@@ -1,4 +1,4 @@
-import { mockNewsData, mockWeeklyData } from './data.js';
+import { mockNewsData, mockWeeklyData, mockMonthlyData } from './data.js';
 
 // Define Web Component for News Card
 class NewsCard extends HTMLElement {
@@ -18,7 +18,7 @@ class NewsCard extends HTMLElement {
         const source = this.getAttribute('source') || '출처 불명';
         const link = this.getAttribute('link') || '#';
 
-        // Format date (e.g., 2026. 3. 16.)
+        // Format date
         const dateObj = new Date(date);
         const formattedDate = dateObj.toLocaleDateString('ko-KR', { year: 'numeric', month: 'long', day: 'numeric' });
 
@@ -122,14 +122,16 @@ class App {
     constructor() {
         this.newsData = mockNewsData;
         this.weeklyData = mockWeeklyData;
+        this.monthlyData = mockMonthlyData;
         
         // Extract unique dates and sort them descending (newest first)
         this.uniqueDates = [...new Set(this.newsData.map(item => item.date))].sort((a, b) => new Date(b) - new Date(a));
         this.selectedDate = this.uniqueDates[0]; // Select the most recent date by default
         
         this.selectedWeekId = this.weeklyData[0]?.id;
+        this.selectedMonthId = this.monthlyData[0]?.id;
         
-        this.viewMode = 'daily'; // 'daily' or 'weekly'
+        this.viewMode = 'daily'; // 'daily', 'weekly', or 'monthly'
 
         this.dateListEl = document.getElementById('date-list');
         this.newsFeedEl = document.getElementById('news-feed');
@@ -137,6 +139,7 @@ class App {
         
         this.tabDailyBtn = document.getElementById('tab-daily');
         this.tabWeeklyBtn = document.getElementById('tab-weekly');
+        this.tabMonthlyBtn = document.getElementById('tab-monthly');
 
         this.init();
     }
@@ -144,6 +147,9 @@ class App {
     init() {
         this.tabDailyBtn.addEventListener('click', () => this.switchTab('daily'));
         this.tabWeeklyBtn.addEventListener('click', () => this.switchTab('weekly'));
+        if(this.tabMonthlyBtn) {
+            this.tabMonthlyBtn.addEventListener('click', () => this.switchTab('monthly'));
+        }
         
         this.renderView();
     }
@@ -152,12 +158,16 @@ class App {
         if (this.viewMode === mode) return;
         this.viewMode = mode;
         
+        this.tabDailyBtn.classList.remove('active');
+        this.tabWeeklyBtn.classList.remove('active');
+        if(this.tabMonthlyBtn) this.tabMonthlyBtn.classList.remove('active');
+
         if (mode === 'daily') {
             this.tabDailyBtn.classList.add('active');
-            this.tabWeeklyBtn.classList.remove('active');
-        } else {
+        } else if (mode === 'weekly') {
             this.tabWeeklyBtn.classList.add('active');
-            this.tabDailyBtn.classList.remove('active');
+        } else if (mode === 'monthly' && this.tabMonthlyBtn) {
+            this.tabMonthlyBtn.classList.add('active');
         }
         
         this.renderView();
@@ -167,8 +177,10 @@ class App {
         this.renderSidebarItems();
         if (this.viewMode === 'daily') {
             this.renderNewsForDate(this.selectedDate);
-        } else {
+        } else if (this.viewMode === 'weekly') {
             this.renderNewsForWeek(this.selectedWeekId);
+        } else if (this.viewMode === 'monthly') {
+            this.renderNewsForMonth(this.selectedMonthId);
         }
     }
 
@@ -197,7 +209,7 @@ class App {
                 li.appendChild(button);
                 this.dateListEl.appendChild(li);
             });
-        } else {
+        } else if (this.viewMode === 'weekly') {
             this.weeklyData.forEach(week => {
                 const li = document.createElement('li');
                 const button = document.createElement('button');
@@ -216,6 +228,25 @@ class App {
                 li.appendChild(button);
                 this.dateListEl.appendChild(li);
             });
+        } else if (this.viewMode === 'monthly') {
+             this.monthlyData.forEach(month => {
+                const li = document.createElement('li');
+                const button = document.createElement('button');
+                
+                button.textContent = month.monthLabel;
+                if (month.id === this.selectedMonthId) {
+                    button.classList.add('active');
+                }
+
+                button.addEventListener('click', () => {
+                    this.selectedMonthId = month.id;
+                    this.updateSidebarActiveState();
+                    this.renderNewsForMonth(month.id);
+                });
+
+                li.appendChild(button);
+                this.dateListEl.appendChild(li);
+            });
         }
     }
 
@@ -229,9 +260,17 @@ class App {
                     btn.classList.remove('active');
                 }
             });
-        } else {
+        } else if (this.viewMode === 'weekly') {
             buttons.forEach((btn, index) => {
                 if (this.weeklyData[index].id === this.selectedWeekId) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+        } else if (this.viewMode === 'monthly') {
+             buttons.forEach((btn, index) => {
+                if (this.monthlyData[index].id === this.selectedMonthId) {
                     btn.classList.add('active');
                 } else {
                     btn.classList.remove('active');
@@ -264,7 +303,6 @@ class App {
             this.newsFeedEl.appendChild(card);
         });
         
-        // Mobile UX: Scroll to top of news feed when a date is clicked
         if (window.innerWidth < 768 && this.newsFeedEl.children.length > 0) {
             this.currentDateHeadingEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
@@ -287,7 +325,28 @@ class App {
         
         this.newsFeedEl.appendChild(card);
         
-        // Mobile UX
+        if (window.innerWidth < 768) {
+            this.currentDateHeadingEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }
+
+    renderNewsForMonth(monthId) {
+        const month = this.monthlyData.find(m => m.id === monthId);
+        this.newsFeedEl.innerHTML = '';
+        
+        if (!month) return;
+        
+        this.currentDateHeadingEl.textContent = `${month.monthLabel} 핵심 트렌드`;
+        
+        const card = document.createElement('news-card');
+        card.setAttribute('title', month.title);
+        card.setAttribute('summary', month.summary);
+        card.setAttribute('date', month.date);
+        card.setAttribute('source', '월간 에디터 요약');
+        card.setAttribute('link', month.link);
+        
+        this.newsFeedEl.appendChild(card);
+        
         if (window.innerWidth < 768) {
             this.currentDateHeadingEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
