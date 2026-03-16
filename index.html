@@ -1,14 +1,33 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello World</title>
-  <link href='/style.css' rel='stylesheet'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily AI News Summary</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Load modern font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h1>Hello, world!</h1>
-  <button onclick="console.log('hello');">Press me</button>
-  <script defer type="text/javascript" src="/main.js"></script>
+    <header class="site-header">
+        <div class="container">
+            <h1>Daily AI News</h1>
+            <p class="subtitle">Stay updated with the latest in Artificial Intelligence</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div id="news-feed" class="news-grid">
+            <!-- News cards will be injected here by JavaScript -->
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2026 Daily AI News. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="main.js"></script>
 </body>
 </html>
