@@ -190,13 +190,109 @@ body {
     gap: 1.5rem;
 }
 
+/* Affiliate Inquiry Styles */
+.affiliate-section {
+    background-color: var(--card-bg);
+    padding: 3rem 0;
+    border-top: 1px solid var(--border-color);
+}
+
+.container.narrow {
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.section-title.centered {
+    text-align: center;
+    border-bottom: none;
+    margin-bottom: 0.5rem;
+}
+
+.section-desc.centered {
+    text-align: center;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+.inquiry-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem;
+    background: var(--bg-color);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.submit-btn {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 1rem;
+    border: none;
+    border-radius: var(--radius-md);
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    margin-top: 1rem;
+}
+
+.submit-btn:hover {
+    background-color: var(--accent-hover);
+}
+
 /* Footer Styles */
 .site-footer {
     background-color: var(--card-bg);
-    padding: 1.5rem 0;
+    padding: 2rem 0;
     text-align: center;
     border-top: 1px solid var(--border-color);
     color: var(--text-secondary);
     font-size: 0.875rem;
     margin-top: auto;
+}
+
+.footer-links {
+    margin-top: 1rem;
+}
+
+.footer-links a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
 }

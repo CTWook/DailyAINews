@@ -36,9 +36,48 @@
         </main>
     </div>
 
+    <section id="affiliate-inquiry" class="affiliate-section">
+        <div class="container narrow">
+            <h2 class="section-title centered">제휴 및 문의</h2>
+            <p class="section-desc centered">AI 뉴스 서비스 제휴, 광고 및 다양한 제보를 기다립니다.</p>
+            
+            <form action="https://formspree.io/f/mnnjjppw" method="POST" class="inquiry-form">
+                <div class="form-group">
+                    <label for="name">이름 / 회사명</label>
+                    <input type="text" id="name" name="name" placeholder="성함 또는 업체명을 입력해 주세요" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">이메일 주소</label>
+                    <input type="email" id="email" name="email" placeholder="답변을 받으실 이메일을 입력해 주세요" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="type">문의 유형</label>
+                    <select id="type" name="type" required>
+                        <option value="제휴">비즈니스 제휴</option>
+                        <option value="광고">광고 문의</option>
+                        <option value="제보">뉴스 제보</option>
+                        <option value="기타">기타 문의</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">문의 내용</label>
+                    <textarea id="message" name="message" rows="5" placeholder="문의하실 내용을 상세히 적어주세요" required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">문의하기</button>
+            </form>
+        </div>
+    </section>
+
     <footer class="site-footer">
         <div class="container">
             <p>&copy; 2026 Daily AI News. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#affiliate-inquiry">제휴 및 문의하기</a>
+            </div>
         </div>
     </footer>
 
