@@ -1,4 +1,4 @@
-import { mockNewsData } from './data.js';
+import { mockNewsData, mockWeeklyData } from './data.js';
 
 // Define Web Component for News Card
 class NewsCard extends HTMLElement {
@@ -121,56 +121,123 @@ customElements.define('news-card', NewsCard);
 class App {
     constructor() {
         this.newsData = mockNewsData;
+        this.weeklyData = mockWeeklyData;
+        
         // Extract unique dates and sort them descending (newest first)
         this.uniqueDates = [...new Set(this.newsData.map(item => item.date))].sort((a, b) => new Date(b) - new Date(a));
         this.selectedDate = this.uniqueDates[0]; // Select the most recent date by default
+        
+        this.selectedWeekId = this.weeklyData[0]?.id;
+        
+        this.viewMode = 'daily'; // 'daily' or 'weekly'
 
         this.dateListEl = document.getElementById('date-list');
         this.newsFeedEl = document.getElementById('news-feed');
         this.currentDateHeadingEl = document.getElementById('current-date-heading');
+        
+        this.tabDailyBtn = document.getElementById('tab-daily');
+        this.tabWeeklyBtn = document.getElementById('tab-weekly');
 
         this.init();
     }
 
     init() {
-        this.renderSidebarDates();
-        this.renderNewsForDate(this.selectedDate);
+        this.tabDailyBtn.addEventListener('click', () => this.switchTab('daily'));
+        this.tabWeeklyBtn.addEventListener('click', () => this.switchTab('weekly'));
+        
+        this.renderView();
+    }
+    
+    switchTab(mode) {
+        if (this.viewMode === mode) return;
+        this.viewMode = mode;
+        
+        if (mode === 'daily') {
+            this.tabDailyBtn.classList.add('active');
+            this.tabWeeklyBtn.classList.remove('active');
+        } else {
+            this.tabWeeklyBtn.classList.add('active');
+            this.tabDailyBtn.classList.remove('active');
+        }
+        
+        this.renderView();
     }
 
-    renderSidebarDates() {
+    renderView() {
+        this.renderSidebarItems();
+        if (this.viewMode === 'daily') {
+            this.renderNewsForDate(this.selectedDate);
+        } else {
+            this.renderNewsForWeek(this.selectedWeekId);
+        }
+    }
+
+    renderSidebarItems() {
         this.dateListEl.innerHTML = '';
-        this.uniqueDates.forEach(date => {
-            const li = document.createElement('li');
-            const button = document.createElement('button');
-            
-            const dateObj = new Date(date);
-            const formattedDate = dateObj.toLocaleDateString('ko-KR', { month: 'long', day: 'numeric', weekday: 'short' });
-            
-            button.textContent = formattedDate;
-            if (date === this.selectedDate) {
-                button.classList.add('active');
-            }
+        
+        if (this.viewMode === 'daily') {
+            this.uniqueDates.forEach(date => {
+                const li = document.createElement('li');
+                const button = document.createElement('button');
+                
+                const dateObj = new Date(date);
+                const formattedDate = dateObj.toLocaleDateString('ko-KR', { month: 'long', day: 'numeric', weekday: 'short' });
+                
+                button.textContent = formattedDate;
+                if (date === this.selectedDate) {
+                    button.classList.add('active');
+                }
 
-            button.addEventListener('click', () => {
-                this.selectedDate = date;
-                this.updateSidebarActiveState();
-                this.renderNewsForDate(date);
+                button.addEventListener('click', () => {
+                    this.selectedDate = date;
+                    this.updateSidebarActiveState();
+                    this.renderNewsForDate(date);
+                });
+
+                li.appendChild(button);
+                this.dateListEl.appendChild(li);
             });
+        } else {
+            this.weeklyData.forEach(week => {
+                const li = document.createElement('li');
+                const button = document.createElement('button');
+                
+                button.textContent = week.weekLabel;
+                if (week.id === this.selectedWeekId) {
+                    button.classList.add('active');
+                }
 
-            li.appendChild(button);
-            this.dateListEl.appendChild(li);
-        });
+                button.addEventListener('click', () => {
+                    this.selectedWeekId = week.id;
+                    this.updateSidebarActiveState();
+                    this.renderNewsForWeek(week.id);
+                });
+
+                li.appendChild(button);
+                this.dateListEl.appendChild(li);
+            });
+        }
     }
 
     updateSidebarActiveState() {
         const buttons = this.dateListEl.querySelectorAll('button');
-        buttons.forEach((btn, index) => {
-            if (this.uniqueDates[index] === this.selectedDate) {
-                btn.classList.add('active');
-            } else {
-                btn.classList.remove('active');
-            }
-        });
+        if (this.viewMode === 'daily') {
+            buttons.forEach((btn, index) => {
+                if (this.uniqueDates[index] === this.selectedDate) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+        } else {
+            buttons.forEach((btn, index) => {
+                if (this.weeklyData[index].id === this.selectedWeekId) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+        }
     }
 
     renderNewsForDate(date) {
@@ -198,6 +265,29 @@ class App {
         });
         
         // Mobile UX: Scroll to top of news feed when a date is clicked
+        if (window.innerWidth < 768 && this.newsFeedEl.children.length > 0) {
+            this.currentDateHeadingEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }
+    
+    renderNewsForWeek(weekId) {
+        const week = this.weeklyData.find(w => w.id === weekId);
+        this.newsFeedEl.innerHTML = '';
+        
+        if (!week) return;
+        
+        this.currentDateHeadingEl.textContent = `${week.weekLabel} 요약`;
+        
+        const card = document.createElement('news-card');
+        card.setAttribute('title', week.title);
+        card.setAttribute('summary', week.summary);
+        card.setAttribute('date', week.date);
+        card.setAttribute('source', '주간 에디터 요약');
+        card.setAttribute('link', week.link);
+        
+        this.newsFeedEl.appendChild(card);
+        
+        // Mobile UX
         if (window.innerWidth < 768) {
             this.currentDateHeadingEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
