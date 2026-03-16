@@ -343,6 +343,7 @@ class App {
         highlightCard.toggleAttribute('highlight', true);
         this.newsFeedEl.appendChild(highlightCard);
 
+        let cardCount = 0;
         filteredNews.forEach(news => {
             const card = document.createElement('news-card');
             card.setAttribute('title', news.title);
@@ -352,11 +353,40 @@ class App {
             card.setAttribute('link', news.link);
             
             this.newsFeedEl.appendChild(card);
+            
+            // Insert AdSense placeholder every 6 cards
+            cardCount++;
+            if (cardCount % 6 === 0) {
+                this.insertAdSensePlaceholder();
+            }
         });
         
         if (window.innerWidth < 768 && this.newsFeedEl.children.length > 0) {
             this.currentDateHeadingEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
+    }
+    
+    insertAdSensePlaceholder() {
+        const adWrapper = document.createElement('div');
+        adWrapper.className = 'ad-container';
+        adWrapper.innerHTML = `
+            <div>
+                <span style="font-weight:bold; color:#64748b;">[ 구글 애드센스 광고 영역 ]</span><br>
+                <small style="color:#94a3b8; margin-top:0.5rem; display:block;">승인 완료 후 실제 맞춤형 광고가 이 위치에 표시됩니다.</small>
+            </div>
+            <!--
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-client="ca-pub-0000000000000000"
+                data-ad-slot="0000000000"
+                data-ad-format="auto"
+                data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            -->
+        `;
+        this.newsFeedEl.appendChild(adWrapper);
     }
     
     renderNewsForWeek(weekId) {

@@ -190,6 +190,51 @@ body {
     gap: 1.5rem;
 }
 
+/* SEO Intro Section for AdSense */
+.seo-intro-section {
+    margin-bottom: 2rem;
+}
+
+.seo-intro-box {
+    background-color: var(--card-bg);
+    padding: 1.5rem 2rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+}
+
+.seo-intro-box h2 {
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+    font-weight: 700;
+}
+
+.seo-intro-box p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.6;
+    word-break: keep-all;
+}
+
+/* AdSense Placeholder Container */
+.ad-container {
+    background-color: #f8fafc;
+    border: 1px dashed #cbd5e1;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    min-height: 250px;
+    text-align: center;
+    color: #94a3b8;
+    grid-column: 1 / -1; /* Span all columns */
+    margin: 1rem 0;
+    font-size: 0.9rem;
+    box-sizing: border-box;
+}
+
 /* Affiliate Inquiry Styles */
 .affiliate-section {
     background-color: var(--card-bg);
