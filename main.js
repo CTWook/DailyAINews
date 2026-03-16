@@ -17,10 +17,16 @@ class NewsCard extends HTMLElement {
         const date = this.getAttribute('date') || '';
         const source = this.getAttribute('source') || '출처 불명';
         const link = this.getAttribute('link') || '#';
+        const isHighlight = this.hasAttribute('highlight');
 
         // Format date
-        const dateObj = new Date(date);
-        const formattedDate = dateObj.toLocaleDateString('ko-KR', { year: 'numeric', month: 'long', day: 'numeric' });
+        let formattedDate = '';
+        if (date) {
+            const dateObj = new Date(date);
+            if (!isNaN(dateObj.getTime())) {
+                 formattedDate = dateObj.toLocaleDateString('ko-KR', { year: 'numeric', month: 'long', day: 'numeric' });
+            }
+        }
 
         this.shadowRoot.innerHTML = `
             <style>
@@ -41,6 +47,15 @@ class NewsCard extends HTMLElement {
                     box-sizing: border-box;
                     font-family: var(--font-family, 'Pretendard', sans-serif);
                 }
+                
+                /* Highlight Style for Summaries */
+                .card.highlight {
+                    background: linear-gradient(to right bottom, #f8fafc, #eff6ff);
+                    border: 2px solid var(--accent-color, #3b82f6);
+                    box-shadow: var(--shadow-lg);
+                    grid-column: 1 / -1; /* Span full width in grid */
+                }
+
                 .card:hover {
                     transform: translateY(-4px);
                     box-shadow: var(--shadow-lg, 0 10px 15px -3px rgb(0 0 0 / 0.1));
@@ -57,6 +72,15 @@ class NewsCard extends HTMLElement {
                     font-weight: 600;
                     color: var(--accent-color, #3b82f6);
                 }
+                
+                .card.highlight .source {
+                    color: #1d4ed8;
+                    background: #dbeafe;
+                    padding: 0.2rem 0.6rem;
+                    border-radius: 1rem;
+                    font-size: 0.8rem;
+                }
+
                 .title {
                     font-size: 1.25rem;
                     font-weight: 700;
@@ -65,6 +89,12 @@ class NewsCard extends HTMLElement {
                     line-height: 1.4;
                     word-break: keep-all;
                 }
+                
+                .card.highlight .title {
+                    font-size: 1.5rem;
+                    color: #1e3a8a;
+                }
+
                 .summary {
                     color: var(--text-secondary, #475569);
                     font-size: 1rem;
@@ -73,6 +103,13 @@ class NewsCard extends HTMLElement {
                     flex-grow: 1;
                     word-break: keep-all;
                 }
+                
+                .card.highlight .summary {
+                    font-size: 1.05rem;
+                    color: #334155;
+                    font-weight: 500;
+                }
+
                 .read-more {
                     display: inline-flex;
                     align-items: center;
@@ -95,13 +132,14 @@ class NewsCard extends HTMLElement {
                     transform: translateX(4px);
                 }
             </style>
-            <article class="card">
+            <article class="card ${isHighlight ? 'highlight' : ''}">
                 <div class="meta">
                     <span class="source">${source}</span>
                     <time datetime="${date}">${formattedDate}</time>
                 </div>
                 <h2 class="title">${title}</h2>
                 <p class="summary">${summary}</p>
+                ${link !== '#' && !isHighlight ? `
                 <div>
                     <a href="${link}" class="read-more" target="_blank" rel="noopener noreferrer">
                         기사 원문 보기
@@ -110,6 +148,7 @@ class NewsCard extends HTMLElement {
                         </svg>
                     </a>
                 </div>
+                ` : ''}
             </article>
         `;
     }
@@ -125,7 +164,10 @@ class App {
         this.monthlyData = mockMonthlyData;
         
         // Extract unique dates and sort them descending (newest first)
-        this.uniqueDates = [...new Set(this.newsData.map(item => item.date))].sort((a, b) => new Date(b) - new Date(a));
+        this.uniqueDates = [...new Set(this.newsData.map(item => item.date))]
+                            .filter(date => date) // Remove empty dates
+                            .sort((a, b) => new Date(b) - new Date(a));
+                            
         this.selectedDate = this.uniqueDates[0]; // Select the most recent date by default
         
         this.selectedWeekId = this.weeklyData[0]?.id;
@@ -285,12 +327,21 @@ class App {
 
         const dateObj = new Date(date);
         const headingDate = dateObj.toLocaleDateString('ko-KR', { year: 'numeric', month: 'long', day: 'numeric' });
-        this.currentDateHeadingEl.textContent = `${headingDate} 주요 뉴스`;
+        this.currentDateHeadingEl.textContent = `${headingDate} 뉴스`;
 
         if (filteredNews.length === 0) {
             this.newsFeedEl.innerHTML = '<p style="color: var(--text-secondary); text-align: center; width: 100%; grid-column: 1 / -1; padding: 3rem 0;">해당 날짜의 뉴스가 없습니다.</p>';
             return;
         }
+
+        // Add a daily highlight/summary card at the top (mocked for now, could be AI generated later)
+        const highlightCard = document.createElement('news-card');
+        highlightCard.setAttribute('title', `${headingDate} 주요 동향 브리핑`);
+        highlightCard.setAttribute('summary', `오늘 수집된 총 ${filteredNews.length}건의 기사 중 가장 주목받는 이슈들을 아래에서 확인하세요.`);
+        highlightCard.setAttribute('source', '에디터 데일리 브리핑');
+        highlightCard.setAttribute('date', date);
+        highlightCard.toggleAttribute('highlight', true);
+        this.newsFeedEl.appendChild(highlightCard);
 
         filteredNews.forEach(news => {
             const card = document.createElement('news-card');
@@ -314,16 +365,30 @@ class App {
         
         if (!week) return;
         
-        this.currentDateHeadingEl.textContent = `${week.weekLabel} 요약`;
+        this.currentDateHeadingEl.textContent = `${week.weekLabel} 주요 뉴스`;
         
-        const card = document.createElement('news-card');
-        card.setAttribute('title', week.title);
-        card.setAttribute('summary', week.summary);
-        card.setAttribute('date', week.date);
-        card.setAttribute('source', '주간 에디터 요약');
-        card.setAttribute('link', week.link);
+        // 1. Show the Weekly Summary Highlight Card at the top
+        const highlightCard = document.createElement('news-card');
+        highlightCard.setAttribute('title', week.title);
+        highlightCard.setAttribute('summary', week.summary);
+        highlightCard.setAttribute('date', week.date);
+        highlightCard.setAttribute('source', '주간 에디터 요약');
+        highlightCard.toggleAttribute('highlight', true);
+        this.newsFeedEl.appendChild(highlightCard);
+
+        // 2. Show actual news articles from the past 7 days relative to the week's date
+        // (Simple filtering logic for demonstration: get approx 10 random/recent articles)
+        const weekArticles = this.newsData.slice(0, 12); // Mocking weekly articles
         
-        this.newsFeedEl.appendChild(card);
+        weekArticles.forEach(news => {
+            const card = document.createElement('news-card');
+            card.setAttribute('title', news.title);
+            card.setAttribute('summary', news.summary);
+            card.setAttribute('date', news.date);
+            card.setAttribute('source', news.source);
+            card.setAttribute('link', news.link);
+            this.newsFeedEl.appendChild(card);
+        });
         
         if (window.innerWidth < 768) {
             this.currentDateHeadingEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -336,16 +401,30 @@ class App {
         
         if (!month) return;
         
-        this.currentDateHeadingEl.textContent = `${month.monthLabel} 핵심 트렌드`;
+        this.currentDateHeadingEl.textContent = `${month.monthLabel} 주요 뉴스`;
         
-        const card = document.createElement('news-card');
-        card.setAttribute('title', month.title);
-        card.setAttribute('summary', month.summary);
-        card.setAttribute('date', month.date);
-        card.setAttribute('source', '월간 에디터 요약');
-        card.setAttribute('link', month.link);
+        // 1. Show the Monthly Summary Highlight Card at the top
+        const highlightCard = document.createElement('news-card');
+        highlightCard.setAttribute('title', month.title);
+        highlightCard.setAttribute('summary', month.summary);
+        highlightCard.setAttribute('date', month.date);
+        highlightCard.setAttribute('source', '월간 에디터 요약');
+        highlightCard.toggleAttribute('highlight', true);
+        this.newsFeedEl.appendChild(highlightCard);
+
+         // 2. Show actual news articles for the month
+        // (Simple filtering logic for demonstration: get approx 15 articles)
+        const monthArticles = this.newsData.slice(10, 25); // Mocking monthly articles
         
-        this.newsFeedEl.appendChild(card);
+        monthArticles.forEach(news => {
+            const card = document.createElement('news-card');
+            card.setAttribute('title', news.title);
+            card.setAttribute('summary', news.summary);
+            card.setAttribute('date', news.date);
+            card.setAttribute('source', news.source);
+            card.setAttribute('link', news.link);
+            this.newsFeedEl.appendChild(card);
+        });
         
         if (window.innerWidth < 768) {
             this.currentDateHeadingEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
